@@ -1,4 +1,4 @@
-Shilpkala is an Indian handicraft and DIY small business website, a digital haven celebrating the rich tapestry of India's traditional craftsmanship and the entrepreneurial spirit of local artisans. Here, you'll embark on a colorful journey through the heart of India's artisanal heritage, where age-old techniques meet contemporary creativity. Our platform showcases a curated collection of handcrafted treasures, ranging from exquisite textiles and intricate jewelry to finely carved woodwork and eye-catching pottery. What sets us apart is our commitment to empowering small businesses and individual artisans, providing them a digital stage to showcase their creations to the world.
+PostHouse is a Posters selling business website, 
 
 For our website, we have used Bootstrap front-end framework. Some of the components used in Home and Login Pages are :
 1. Accordion 
