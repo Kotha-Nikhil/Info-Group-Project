@@ -31,8 +31,6 @@ function validate(e) {
   switch(id){
     case "password":
       let feedbackPassword = document.getElementById("feedback-password");
-      let progressBar = document.getElementById("progress-bar");
-      let progress = document.getElementById("progress");
       let passwordStrength = document.getElementById("passwordStrength");
     
       let password = document.getElementById("password");
@@ -41,21 +39,7 @@ function validate(e) {
       let uppercaseRegex = /[A-Z]/g;
       let specialCharRegex = /[!@#$%^&*()_+{}\[\]:;<>,.?~\\]/g;
       isPasswordValid=false;
-      if (password.value.length < 8) {
-        showError(password, feedbackPassword, "Must conatin atleast 8 characters");
-        progress.style.display = "flex";
-        progressBar.style.width = "25%";
-        progressBar.classList.add("bg-danger");
-        passwordStrength.classList.add("text-danger");
-        passwordStrength.innerHTML = "Weak";
-      } else if (!alphanumeric.test(password.value)) {
-        showError(password, feedbackPassword, "Try a mix of letters and numbers");
-        progress.style.display = "flex";
-        progressBar.style.width = "25%";
-        progressBar.classList.add("bg-danger");
-        passwordStrength.classList.add("text-danger");
-        passwordStrength.innerHTML = "Weak";
-      } else if (password.value.length >= 8 && alphanumeric.test(password.value)) {
+      if (password.value.length >= 8 && alphanumeric.test(password.value)) {
         if (
           !(
             lowercaseRegex.test(password.value) &&
@@ -68,24 +52,10 @@ function validate(e) {
             feedbackPassword,
             "Your password must contain a combination of uppercase and lowercase letters, as well as at least one special character. Please ensure your password meets these requirements for enhanced security."
           );
-          progress.style.display = "flex";
-          progressBar.style.width = "65%";
-          progressBar.classList.remove("bg-danger");
-          progressBar.classList.add("bg-warning");
-          passwordStrength.classList.remove("text-danger");
-          passwordStrength.classList.add("text-warning");
-          passwordStrength.innerHTML = "Medium";
+        
         }
         else {
             showSuccess(password, feedbackPassword, "Looks good");
-            progress.style.display = "flex";
-            progressBar.style.width = "100%";
-            progressBar.classList.remove("bg-danger");
-            progressBar.classList.remove("bg-warning");
-            progressBar.classList.add("bg-success");
-            passwordStrength.classList.remove("text-danger");
-            passwordStrength.classList.remove("text-warning");
-            passwordStrength.classList.add("text-success");
             passwordStrength.innerHTML = "Strong";
             isPasswordValid=true;
           }
